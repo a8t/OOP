@@ -24,9 +24,24 @@ class BankAccount
   end
 end
 
-andy = BankAccount.new(20000,1.13)
+class Cat
+  attr_reader :name, :preferred_food, :meal_time
 
-puts andy.withdraw(400)
-puts andy.gain_interest
-puts andy.withdraw(40000)
-puts andy.gain_interest
+  def initialize(name,preferred_food,meal_time)
+    @name = name
+    @preferred_food = preferred_food
+    @meal_time = meal_time
+  end
+
+  def eats_at
+    @meal_time < 11 ? "#{@meal_time} AM" : "#{@meal_time-12} PM"
+  end
+
+  def meow
+    "My name is #{@name} and I eat #{@preferred_food} at #{eats_at}."
+  end
+end
+
+lois = Cat.new("Lois","tuna",23)
+puts lois.eats_at
+puts lois.meow
