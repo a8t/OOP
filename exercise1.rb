@@ -127,6 +127,3 @@ john = Player.new
 # puts "Lives: #{john.lives}, Health: #{john.health_points}"
 # john.do_battle(10)
 # puts "Lives: #{john.lives}, Health: #{john.health_points}"
-
-
-# Exercise 4
