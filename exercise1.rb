@@ -45,7 +45,15 @@ class Cat
   end
 
   def eats_at
-    @meal_time < 11 ? "#{@meal_time} AM" : "#{@meal_time-12} PM"
+    if @meal_time == 0
+      "midnight"
+    elsif @meal_time.between?(1,11)
+      "#{@meal_time} AM"
+    elsif @meal_time == 12
+      "noon"
+    elsif @meal_time.between?(13,23)
+      "#{@meal_time-12} AM"
+    end
   end
 
   def meow
@@ -53,10 +61,10 @@ class Cat
   end
 end
 
-lois = Cat.new("Lois","tuna",23)
-nala = Cat.new("Nala","treats",7)
-# puts lois.eats_at
-# puts nala.meow
+lois = Cat.new("Lois","tuna",0)
+nala = Cat.new("Nala","treats",12)
+puts lois.meow
+puts nala.meow
 
 
 # Exercise 3
